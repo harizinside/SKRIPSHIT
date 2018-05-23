@@ -11,6 +11,7 @@
     <link href="/avengers/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/avengers/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
+    <link href="/avengers/assets/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="/avengers/assets/css/animate.css" rel="stylesheet">
     <link href="/avengers/assets/css/style.css" rel="stylesheet">
 
@@ -43,23 +44,22 @@
             </div>
             <div class="col-md-6">
                 <div class="ibox-content">
-                    <form class="m-t" role="form" action="index.html">
+                    <form class="m-t" role="form" method="post" action="login">
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Username" required="">
+                            <input type="text" id="identity" name="identity" class="form-control" placeholder="Username" required="">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password" required="">
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
                         </div>
+                        <div>
+                        	<label> <input type="checkbox" class="i-checks" id="remember"> Remember me </label>
+                        </div>
+                        <div>
                         <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
-
-                        <a href="#">
+                        <a href="forgot_password">
                             <small>Forgot password?</small>
                         </a>
-
-                        <p class="text-muted text-center">
-                            <small>Do not have an account?</small>
-                        </p>
-                        <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a>
+                    	</div>
                     </form>
                     <p class="m-t">
                         <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small>
@@ -78,35 +78,19 @@
         </div>
     </div>
 
+    <script src="/avengers/assets/js/jquery-3.1.1.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="/avengers/assets/js/plugins/iCheck/icheck.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.i-checks').iCheck({
+                    checkboxClass: 'icheckbox_square-green',
+                    radioClass: 'iradio_square-green',
+                });
+            });
+        </script>
+
 </body>
 
 </html>
-
-<h1><?php echo lang('login_heading');?></h1>
-<p><?php echo lang('login_subheading');?></p>
-
-<div id="infoMessage"><?php echo $message;?></div>
-
-<?php echo form_open("auth/login");?>
-
-  <p>
-    <?php echo lang('login_identity_label', 'identity');?>
-    <?php echo form_input($identity);?>
-  </p>
-
-  <p>
-    <?php echo lang('login_password_label', 'password');?>
-    <?php echo form_input($password);?>
-  </p>
-
-  <p>
-    <?php echo lang('login_remember_label', 'remember');?>
-    <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
-  </p>
-
-
-  <p><?php echo form_submit('submit', lang('login_submit_btn'));?></p>
-
-<?php echo form_close();?>
-
-<p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>

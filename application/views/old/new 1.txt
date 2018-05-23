@@ -1,0 +1,215 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title><?php echo $title?></title>
+
+	<?php foreach ($css as $src) : ?>
+		<link rel="stylesheet" type="text/css" href="<?= $src ?>">
+	<?php endforeach; ?>
+	
+</head>
+
+<body class="fixed-sidebar">
+
+	<!-- Start Navbar -->
+	<div id="wrapper">
+		<nav class="avbar-default navbar-static-side" role="navigation" >
+			<div class="sidebar-collapse">
+				<ul class="nav metismenu" id="side-menu">
+					<li class="nav-header" >
+						<div class="dropdown profile-element" >
+							<span>
+								<img alt="image" class="img-circle" height="52" width="52" src="<?php echo $img ?>" >
+							</span>
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<span class="clear">
+									<span class="block m-t-xs">
+										<strong class="font-bold"><?php echo $nama ?></strong>
+									</span>
+									<span class="text-muted text-xs block">
+										<?php echo $job ?><b class="caret"></b>
+									</span>
+								</span>
+							</a>
+							<ul class="dropdown-menu animated fadeInRight m-t-xs">
+								<li><a href="#"><?php echo lang('profile_drop'); ?></a></li>
+								<li><a href="#"><?php echo lang('teams_drop'); ?></a></li>
+								<li><a href="#"><?php echo lang('project_drop'); ?></a></li>
+								<li><a href="#"><?php echo lang('chat_drop'); ?></a></li>
+								<li class="divider"></li>
+								<li><a href="#"><?php echo lang('logout');?></a></li>
+							</ul>
+						</div>
+						<div class="logo-element">
+							<?php echo lang('logo_header'); ?>
+						</div>
+					</li>
+					<li class="active">
+						<a href="#"><i class="fas fa-braille"></i>
+							<span class="nav-label">
+								<?php echo lang('judul_awal');?> 
+							</span> 
+						</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-boxes"></i> 
+							<span class="nav-label"> 
+								<?php echo lang('master_items');?>
+							</span>
+							<span class="fa arrow"></span>
+						</a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="#"><?php echo lang('master_users'); ?></a></li>
+							<li><a href="#"><?php echo lang('master_teams'); ?></a></li>
+							<li><a href="#"><?php echo lang('master_project'); ?></a></li>
+							<li><a href="#"><?php echo lang('master_papers'); ?></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href=""><i class="fas fa-comments"></i>
+							<span class="nav-label">
+								<?php echo lang('discus_chat');?>
+							</span>
+						</a>
+					</li>
+					<li class="landing_link">
+						<a href=""><i class="fas fa-code-branch"></i>
+							<span class="nav-label">
+								<?php echo lang('review_list');?>
+							</span>
+						</a>
+					</li>
+					<li class="special_link">
+						<a href=""><i class="fas fa-bug"></i>
+							<span class="nav-label">
+								<?php echo lang('abandoned_items');?>
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<!-- End of NafBar -->
+
+	<!-- Start Header -->
+	<div class="gray-bg dashbard-1" id="page-wrapper">
+		<div class="row border-bottom">
+			<nav class="navbar navbar-static-top" style="margin-bottom: 0" role="navigation" >
+				<div class="navbar-header">
+					<a href="#" class="navbar-minimalize minimalize-styl-2 btn btn-primary"><i class="fa fa-bars"></i></a>
+				</div>
+				<ul class="nav navbar-top-links navbar-right">
+					<li>
+						<span class="m-r-sm text-muted welcome-message"> <?php echo lang('judul_skripsi');?></span>
+					</li>
+					<li>
+						<a href="logout">
+							<i class="fas fa-sign-out-alt"></i> <?php echo lang('logout');?>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>		
+	</div>
+	<!-- End of Header -->
+
+	<!-- Start of Body -->
+	<div class="row  border-bottom white-bg dashboard-header">
+		<div class="col-md-3">
+			<h2><?php echo lang('greeting_body');?> <?php echo $nama ?></h2>
+			<small><?php echo lang('pending_body');?> 12</small>
+			<ul class="list-group clear-list m-t">
+				<li class="list-group-item fist-item">
+					<span class="pull-right">09.00 PM</span>
+					<span class="label label-success">1</span>
+					Please contact me
+				</li>
+				<li class="list-group-item fist-item">
+					<span class="pull-right">09.00 PM</span>
+					<span class="label label-info">2</span>
+					Please contact me
+				</li>
+				<li class="list-group-item fist-item">
+					<span class="pull-right">09.00 PM</span>
+					<span class="label label-primary">3</span>
+					Please contact me
+				</li>
+				<li class="list-group-item fist-item">
+					<span class="pull-right">09.00 PM</span>
+					<span class="label label-default">4</span>
+					Please contact me
+				</li>
+				<li class="list-group-item fist-item">
+					<span class="pull-right">09.00 PM</span>
+					<span class="label label-danger">5</span>
+					Please contact me
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-6">
+			<div class="flot-chart dashboard-chart">
+				<div class="flot-chart-content" id="flot-dashboard-chart"></div>
+			</div>
+			<div class="row text-left">
+				<div class="col-xs-4">
+					<div class="m-l-md">
+						<span class="h4 font-bold m-t block">$ 406,100</span>
+						<small class="text-muted m-b block">Sales marketing report</small>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="m-l-md">
+						<span class="h4 font-bold m-t block">$ 406,100</span>
+						<small class="text-muted m-b block">Sales marketing report</small>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="m-l-md">
+						<span class="h4 font-bold m-t block">$ 406,100</span>
+						<small class="text-muted m-b block">Sales marketing report</small>
+					</div>
+				</div>				
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="statistic-box">
+				<h4>Project Beta Progress</h4>
+				<p>You have two project with not compleated task.</p>
+				<div class="row text-center">
+					<div class="col-lg-6">
+						<canvas id="doughnutChart2" width="80" height="80" style="margin: 18px auto 0"></canvas>
+						<h5>Kolter</h5>
+					</div>
+					<div class="col-lg-6">
+						<canvas id="doughnutChart" width="80" height="80" style="margin: 18px auto 0"></canvas>
+						<h5>Maxtor</h5>
+					</div>
+				</div>
+				<div class="m-t">
+					<small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<!-- End Of Body -->
+
+	<!-- Start Footer -->
+	<div class="footer">
+		<div class="pull-right">Agape Software International</div>
+		<div><strong>Copyright</strong> Muhammad Haris Setiawan &copy; 2017-2018</div>
+	</div>
+	<!-- End Footer -->
+	
+	<?php foreach ($js as $src) :  ?>
+		<script type="text/javascript" src="<?= $src ?>" charset="utf-8"></script>
+	<?php endforeach; ?>
+
+</body>
+</html>
