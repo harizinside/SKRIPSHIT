@@ -11,7 +11,9 @@
 
 	<?php foreach ($css as $src) : ?>
 		<link rel="stylesheet" type="text/css" href="<?= $src ?>">
-	<?php endforeach; ?>
+	<?php endforeach;?>
+
+	<?php echo var_dump($content); ?>
 
 </head>
 <body>
@@ -22,7 +24,7 @@
 	                <li class="nav-header">
 	                    <div class="dropdown profile-element">
 	                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-	                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $nama ?></strong>
+	                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $content[0]->usrFullName; ?></strong>
 	                             </span> <span class="text-muted text-xs block"><?php echo $job ?> <b class="caret"></b></span> </span> </a>
 	                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
 	                                <li><a href="#"><?php echo lang('logout');?></a></li>
@@ -88,7 +90,7 @@
 	                </div>
 	                <ul class="nav navbar-top-links navbar-right">
 	                    <li>
-	                        <a href="#">
+	                        <a href="auth/logout">
 	                            <i class="fas fa-sign-out-alt"></i> <?php echo lang('logout');?>
 	                        </a>
 	                    </li>

@@ -44,6 +44,12 @@
             </div>
             <div class="col-md-6">
                 <div class="ibox-content">
+                	<?php if($message != NULL) {?>
+                	<div id="infoMessage" class="alert alert-danger  alert-dismissable">
+                		<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <?php echo $message;?>
+                	</div>
+                	<?php } ?>
                     <form class="m-t" role="form" method="post" action="login">
                         <div class="form-group">
                             <input type="text" id="identity" name="identity" class="form-control" placeholder="Username" required="">
@@ -62,7 +68,7 @@
                     	</div>
                     </form>
                     <p class="m-t">
-                        <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small>
+                        <small>Agape Software International &copy; 2018</small>
                     </p>
                 </div>
             </div>
@@ -70,15 +76,16 @@
         <hr/>
         <div class="row">
             <div class="col-md-6">
-                Copyright Example Company
+                Copyright Muhamad Haris Setiawan
             </div>
             <div class="col-md-6 text-right">
-               <small>© 2014-2015</small>
+               <small>© 2017-2018</small>
             </div>
         </div>
     </div>
 
     <script src="/avengers/assets/js/jquery-3.1.1.min.js"></script>
+    <script src="/avengers/assets/js/bootstrap.min.js"></script>
 
     <!-- iCheck -->
     <script src="/avengers/assets/js/plugins/iCheck/icheck.min.js"></script>

@@ -29,6 +29,11 @@ class Teams extends CI_Controller
 			'assets/js/plugins/pace/pace.min.js',
 			'assets/custom/teams.js'
 		);
+
+		if (!$this->ion_auth->logged_in())
+		{
+        	redirect('auth/login');
+    	}
 	}
 	
 	public function index()

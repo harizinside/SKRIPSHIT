@@ -42,6 +42,12 @@ class Home extends CI_Controller
 			'assets/js/plugins/toastr/toastr.min.js',
 			'assets/custom/home.js'
 		);
+
+		if (!$this->ion_auth->logged_in())
+		{
+			$this->session->set_flashdata('message', $this->lang->line('gofuckout'));
+			redirect('auth/login','refresh');
+		}
 	}
 	
 	public function index()
@@ -54,7 +60,7 @@ class Home extends CI_Controller
 			'nama' => 'Muhammad Haris Setiawan',
 			'job' => 'Bussiness Analys',
 			'active_home'=>'active',
-			'content' => $this->home_model->get_all(),
+			'content' => $this->home_model->get_all('master_users'),
 			'css' => $this->css,
 			'js' => $this->js
 			);

@@ -19,6 +19,7 @@ $lang['judul_awal'] = 'Home';
 //Toast
 $lang['toas_welcome_header'] = 'Welcome';
 $lang['toas_welcome_footer'] = 'System Development Life Cycle';
+$lang['gofuckout'] = 'Please login with your email/username and password below first.';
 
 // Drop Down User
 $lang['profile_drop'] = 'Profile';
